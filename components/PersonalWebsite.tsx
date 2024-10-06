@@ -101,9 +101,8 @@ export default function PersonalWebsite() {
 
   const fetchColorTheme = async () => {
     try {
-      const response = await fetch('http://colormind.io/api/', {
-        method: 'POST',
-        body: JSON.stringify({ model: 'default' })
+      const response = await fetch('/api/colorTheme', {
+        method: 'POST'
       });
       const data = await response.json();
       const [bg, , primary, secondary, accent] = data.result.map((color: number[]) => 
