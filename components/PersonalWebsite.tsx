@@ -146,18 +146,9 @@ export default function PersonalWebsite() {
   };
   const toggleMute = () => setIsMuted(!isMuted);
 
-  const scrollbarHiddenStyle = {
-    scrollbarWidth: 'none',  // Firefox
-    msOverflowStyle: 'none',  // Internet Explorer 10+
-    '&::-webkit-scrollbar': {  // WebKit
-      width: '0px',
-      background: 'transparent'
-    }
-  };
-
   return (
     <div 
-      className={`min-h-[200vh] font-['SF Pro Display', 'Inter', sans-serif] transition-colors duration-300`}
+      className={`min-h-[200vh] font-[&apos;SF Pro Display&apos;, &apos;Inter&apos;, sans-serif] transition-colors duration-300`}
       style={{ 
         backgroundColor: isDarkMode ? '#121212' : colorTheme.background,
         color: isDarkMode ? '#ffffff' : colorTheme.text
@@ -266,11 +257,7 @@ export default function PersonalWebsite() {
               </div>
               {selectedProject && (
                 <motion.div 
-                  className="overflow-y-auto max-h-[calc(100vh-200px)]"
-                  style={{
-                    ...scrollbarHiddenStyle,
-                    overflowY: 'scroll'  // Ensure scrolling is still possible
-                  }}
+                  className="overflow-y-auto max-h-[calc(100vh-200px)] hide-scrollbar"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
