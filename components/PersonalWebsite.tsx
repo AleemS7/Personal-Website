@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Mail, Github, Linkedin, MapPin, Moon, Sun, Volume2, VolumeX, Palette } from 'lucide-react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -47,7 +47,7 @@ export default function PersonalWebsite() {
     offset: ["start start", "end start"]
   });
 
-  const projects: Project[] = [
+  const projects: Project[] = useMemo(() => [
     {
       name: "project 1",
       description: "bleh bleh bleh blah blah blah blo blo blo bleh blo blah something something something",
@@ -60,7 +60,7 @@ export default function PersonalWebsite() {
       image: "https://img.freepik.com/free-photo/cute-cat-with-rainbow-sunglasses_23-2150007935.jpg",
       tags: ["awesome tech", "awesome language", "awesome framework"],
     },
-  ];
+  ], []); // Empty dependency array means this will only be created once
 
   useEffect(() => {
     setSelectedProject(projects[0]);
