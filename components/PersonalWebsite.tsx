@@ -67,7 +67,7 @@ export default function PersonalWebsite() {
     audioRef.current = new Audio('/minecraft_volume_alpha.mp3');
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5; // Set volume to 50%
-  }, []);
+  }, [projects]); // Added 'projects' to the dependency array
 
   useEffect(() => {
     if (audioRef.current) {
@@ -106,7 +106,7 @@ export default function PersonalWebsite() {
         body: JSON.stringify({ model: 'default' })
       });
       const data = await response.json();
-      const [bg, text, primary, secondary, accent] = data.result.map((color: number[]) => 
+      const [bg, , primary, secondary, accent] = data.result.map((color: number[]) => 
         `#${color.map(c => c.toString(16).padStart(2, '0')).join('')}`
       );
       const textColor = getContrastYIQ(bg);
