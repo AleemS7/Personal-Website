@@ -50,15 +50,15 @@ export default function PersonalWebsite() {
   const projects: Project[] = useMemo(() => [
     {
       name: "project 1",
-      description: "bleh bleh bleh blah blah blah blo blo blo bleh blo blah something something something",
-      image: "https://i.pinimg.com/736x/32/7e/db/327edb9a15b304efc264668ada03f725.jpg",
-      tags: ["awesome tech", "awesome language", "awesome framework"],
+      description: "..",
+      image: "",
+      tags: ["Next.js", "Tailwind", "React"],
     },
     {
       name: "project 2",
-      description: "bleh bleh bleh blah blah blah blo blo blo bleh blo blah something something something",
-      image: "https://img.freepik.com/free-photo/cute-cat-with-rainbow-sunglasses_23-2150007935.jpg",
-      tags: ["awesome tech", "awesome language", "awesome framework"],
+      description: "..",
+      image: "",
+      tags: ["Next.js", "Tailwind", "React"],
     },
   ], []); // Empty dependency array means this will only be created once
 
